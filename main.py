@@ -1,4 +1,21 @@
+
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "NSE Alert Bot is Live"
+
+import threading
+def run():
+  app.run(host='0.0.0.0', port=8080)
+threading.Thread(target=run).start()
+
 """
+
+
+
 NSE Stock News Scanner
 
 Polls multiple RSS feeds and sends Telegram alerts for your watchlist.
